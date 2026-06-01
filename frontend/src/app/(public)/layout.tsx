@@ -1,0 +1,16 @@
+import { Footer } from "@/components/layout/Footer"
+import { PublicNav } from "@/components/layout/PublicNav"
+import { PageTransition } from "@/components/primitives/PageTransition"
+
+export default function PublicLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex min-h-screen flex-col">
+      <PublicNav />
+      <main className="flex-1">
+        <PageTransition>{children}</PageTransition>
+      </main>
+      <Footer />
+    </div>
+  )
+}
+
