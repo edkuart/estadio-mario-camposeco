@@ -11,7 +11,7 @@ export const metadata: Metadata = { title: "Proveedores" }
 const STATUS_MAP = {
   identificado: "pending",
   por_validar: "under_review",
-  posible_oferente: "in_progress",
+  posible_oferente: "reported",
   adjudicado: "approved",
   descartado: "rejected",
 } as const

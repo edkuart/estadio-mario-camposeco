@@ -6,10 +6,12 @@ type Status =
   | "rejected"
   | "expired"
   | "pending"
+  | "reported"
   | "in_progress"
   | "completed"
   | "delayed"
   | "planning"
+  | "pre_licitacion"
   | "operational"
   | "suspended"
 
@@ -24,10 +26,12 @@ const STATUS_CONFIG: Record<
   rejected: { label: "Rechazada", dot: "✕", classes: "text-error-text" },
   expired: { label: "Vencida", dot: "○", classes: "text-text-muted" },
   pending: { label: "Pendiente", dot: "○", classes: "text-text-muted" },
+  reported: { label: "Reportada", dot: "●", classes: "text-info-text" },
   in_progress: { label: "En progreso", dot: "◐", classes: "text-accent" },
   completed: { label: "Completada", dot: "●", classes: "text-success-text" },
   delayed: { label: "Retrasada", dot: "●", classes: "text-error-text" },
   planning: { label: "Planificación", dot: "○", classes: "text-text-secondary" },
+  pre_licitacion: { label: "Prelicitación", dot: "◐", classes: "text-warning-text" },
   operational: { label: "Operacional", dot: "●", classes: "text-success-text" },
   suspended: { label: "Suspendida", dot: "✕", classes: "text-warning-text" },
 }

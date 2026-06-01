@@ -41,7 +41,7 @@ export default function HomePage() {
 
         <div className="relative mx-auto w-full max-w-7xl">
           <div className="mb-10 flex flex-wrap items-center gap-3">
-            <StatusBadge status="in_progress" />
+            <StatusBadge status="pre_licitacion" />
             <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>·</span>
             <span className="font-mono text-xs" style={{ color: "var(--text-muted)" }}>
               {STADIUM_PROJECT.location} — corte {STADIUM_PROJECT.lastReviewed}

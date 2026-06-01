@@ -9,7 +9,7 @@ export const metadata: Metadata = { title: "Permisos" }
 
 const STATUS_MAP = {
   pendiente: "pending",
-  reportado: "in_progress",
+  reportado: "reported",
   en_revision: "under_review",
   aprobado_reportado: "approved",
   oficial_localizado: "completed",

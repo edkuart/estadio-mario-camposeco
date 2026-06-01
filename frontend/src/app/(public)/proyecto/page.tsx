@@ -23,7 +23,7 @@ export default function ProyectoPage() {
         <div className="mb-12 flex flex-wrap gap-6 rounded-lg border border-border bg-bg-card px-6 py-4">
           <div>
             <p className="font-mono text-xs text-text-muted mb-1">Estado actual</p>
-            <StatusBadge status="in_progress" />
+            <StatusBadge status="pre_licitacion" />
           </div>
           <div>
             <p className="font-mono text-xs text-text-muted mb-1">Ubicacion</p>

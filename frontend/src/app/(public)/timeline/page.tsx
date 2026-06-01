@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Timeline" }
 
 const STATUS_TO_BADGE = {
   verified: "completed",
-  reported: "in_progress",
+  reported: "completed",
   pending: "pending",
   conflict: "delayed",
 } as const
@@ -43,7 +43,7 @@ export default function TimelinePage() {
               <SectionReveal key={event.id} delay={i * 0.04}>
                 <div className={`relative flex gap-8 ${isLast ? "" : "pb-10"}`}>
                   <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border bg-bg-base">
-                    <span className={`h-3 w-3 rounded-full ${event.status === "verified" ? "bg-success-text" : event.status === "pending" ? "bg-border-dim" : event.status === "conflict" ? "bg-error-text" : "bg-accent"}`} />
+                    <span className={`h-3 w-3 rounded-full ${event.status === "pending" ? "bg-border-dim" : event.status === "conflict" ? "bg-error-text" : "bg-success-text"}`} />
                   </div>
 
                   <div className="flex-1 pb-2">

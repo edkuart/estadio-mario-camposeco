@@ -110,7 +110,18 @@ export const STADIUM_TIMELINE: StadiumTimelineEvent[] = [
       "Autoridades reportan avance ambiental y tramite final, con posible publicacion posterior en Guatecompras.",
     category: "contratacion",
     status: "reported",
-    sourceLabel: "Declaracion reportada; falta NOG",
+    sourceLabel: "Prensa; aprobacion ambiental reportada y tramite IDAEH en fase final",
+  },
+  {
+    id: "idae-aval-2026",
+    date: "2026-05-21",
+    precision: "exacta",
+    title: "Autorizacion IDAEH reportada",
+    description:
+      "Medios reportan autorizacion del IDAEH para avanzar con la remodelacion. La plataforma todavia debe archivar la resolucion o expediente oficial.",
+    category: "permiso",
+    status: "reported",
+    sourceLabel: "Guatefutbol/medios; falta resolucion oficial archivada",
   },
   {
     id: "guatecompras-pending",
