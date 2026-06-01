@@ -22,6 +22,13 @@ const STATUS_CLASS: Record<string, string> = {
   requiere_solicitud: "text-error-text",
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  localizada: "Localizada",
+  pendiente: "Pendiente",
+  por_archivar: "Por archivar",
+  requiere_solicitud: "Requiere solicitud",
+}
+
 const TYPE_LABEL: Record<string, string> = {
   oficial: "Oficial",
   medio: "Medio",
@@ -73,7 +80,7 @@ export default function FuentesPage() {
               <div className="mb-4 flex flex-wrap items-center gap-3">
                 <span className="rounded-sm border border-border px-2 py-1 font-mono text-xs text-text-muted">{TYPE_LABEL[source.type]}</span>
                 <span className={`font-mono text-xs uppercase ${RELIABILITY_CLASS[source.reliability]}`}>Confiabilidad {source.reliability}</span>
-                <span className={`font-mono text-xs uppercase ${STATUS_CLASS[source.status]}`}>{source.status.replace(/_/g, " ")}</span>
+                <span className={`font-mono text-xs uppercase ${STATUS_CLASS[source.status]}`}>{STATUS_LABEL[source.status]}</span>
               </div>
               <h2 className="font-display text-xl font-bold text-text-primary leading-snug">{source.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-text-secondary">{source.notes}</p>

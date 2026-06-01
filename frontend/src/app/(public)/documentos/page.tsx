@@ -21,6 +21,13 @@ const STATUS_CLASS: Record<string, string> = {
   por_solicitar: "text-error-text",
 }
 
+const STATUS_LABEL: Record<string, string> = {
+  localizado: "Localizado",
+  pendiente: "Pendiente",
+  por_descargar: "Por descargar",
+  por_solicitar: "Por solicitar",
+}
+
 const TYPE_LABEL: Record<string, string> = {
   acta: "Acta",
   permiso: "Permiso",
@@ -77,7 +84,7 @@ export default function DocumentosPage() {
                 <div className="mb-4 flex flex-wrap items-center gap-3">
                   <span className="rounded-sm border border-border px-2 py-1 font-mono text-xs text-text-muted">{TYPE_LABEL[document.type]}</span>
                   <span className={`font-mono text-xs uppercase ${PRIORITY_CLASS[document.priority]}`}>Prioridad {document.priority}</span>
-                  <span className={`font-mono text-xs uppercase ${STATUS_CLASS[document.status]}`}>{document.status.replace(/_/g, " ")}</span>
+                  <span className={`font-mono text-xs uppercase ${STATUS_CLASS[document.status]}`}>{STATUS_LABEL[document.status]}</span>
                 </div>
                 <h2 className="font-display text-xl font-bold text-text-primary leading-snug">{document.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-text-secondary">{document.summary}</p>

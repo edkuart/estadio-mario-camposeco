@@ -9,7 +9,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = { title: "Proveedores" }
 
 const STATUS_MAP = {
-  identificado: "pending",
+  identificado: "identified",
   por_validar: "under_review",
   posible_oferente: "reported",
   adjudicado: "approved",

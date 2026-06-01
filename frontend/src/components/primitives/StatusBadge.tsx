@@ -6,6 +6,7 @@ type Status =
   | "rejected"
   | "expired"
   | "pending"
+  | "identified"
   | "reported"
   | "in_progress"
   | "completed"
@@ -26,6 +27,7 @@ const STATUS_CONFIG: Record<
   rejected: { label: "Rechazada", dot: "✕", classes: "text-error-text" },
   expired: { label: "Vencida", dot: "○", classes: "text-text-muted" },
   pending: { label: "Pendiente", dot: "○", classes: "text-text-muted" },
+  identified: { label: "Identificada", dot: "●", classes: "text-info-text" },
   reported: { label: "Reportada", dot: "●", classes: "text-info-text" },
   in_progress: { label: "En progreso", dot: "◐", classes: "text-accent" },
   completed: { label: "Completada", dot: "●", classes: "text-success-text" },

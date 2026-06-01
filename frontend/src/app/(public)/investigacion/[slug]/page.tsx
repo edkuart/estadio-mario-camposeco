@@ -45,6 +45,20 @@ const ARTICLE_DETAILS: Record<string, string[]> = {
   ],
 }
 
+const RESEARCH_STATUS_LABEL: Record<string, string> = {
+  inicial: "Inicial",
+  pendiente_fuente_primaria: "Fuente primaria pendiente",
+  corroborar: "Por corroborar",
+  oficial: "Oficial",
+}
+
+const DOCUMENT_STATUS_LABEL: Record<string, string> = {
+  localizado: "Localizado",
+  pendiente: "Pendiente",
+  por_descargar: "Por descargar",
+  por_solicitar: "Por solicitar",
+}
+
 export async function generateStaticParams() {
   return STADIUM_RESEARCH.map((article) => ({ slug: article.slug }))
 }
@@ -83,7 +97,7 @@ export default async function ArticlePage({ params }: Props) {
             <span className="font-mono text-xs text-text-muted">/</span>
             <span className="font-mono text-xs text-text-muted">{article.relevance} relevancia</span>
             <span className="font-mono text-xs text-text-muted">/</span>
-            <span className="font-mono text-xs text-text-muted">{article.status.replace(/_/g, " ")}</span>
+            <span className="font-mono text-xs text-text-muted">{RESEARCH_STATUS_LABEL[article.status]}</span>
           </div>
           <h1 className="font-display text-3xl font-bold leading-tight text-text-primary">{article.title}</h1>
           <p className="mt-4 leading-relaxed text-text-secondary">{article.summary}</p>
@@ -118,7 +132,7 @@ export default async function ArticlePage({ params }: Props) {
               <div className="mt-4 space-y-3">
                 {linkedDocuments.map((document) => (
                   <div key={document.id} className="text-sm text-text-secondary">
-                    <span className="text-text-primary">{document.title}</span> - {document.status.replace(/_/g, " ")}
+                    <span className="text-text-primary">{document.title}</span> - {DOCUMENT_STATUS_LABEL[document.status]}
                   </div>
                 ))}
               </div>

@@ -18,9 +18,11 @@ const TECHNICAL_CHECKS = [
   { label: "Broadcast", value: "Por definir", notes: "Camaras, cabinas, energia, conectividad, posiciones y seguridad operacional." },
 ]
 
+const PERMIT_STATUSES_TO_CONFIRM = new Set(["pendiente", "reportado", "en_revision", "no_evaluable"])
+
 export default function IngenieriaPage() {
   const technicalRisks = STADIUM_RISKS.filter((risk) => ["tecnico", "operativo", "ambiental"].includes(risk.category))
-  const pendingPermits = STADIUM_PERMITS.filter((permit) => permit.status !== "oficial_localizado")
+  const permitsToConfirm = STADIUM_PERMITS.filter((permit) => PERMIT_STATUSES_TO_CONFIRM.has(permit.status))
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-16">
@@ -36,7 +38,7 @@ export default function IngenieriaPage() {
       <SectionReveal delay={0.04}>
         <div className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
           <MetricCard label="Categorias materiales" value={STADIUM_MATERIALS.length} description="Estructura, graderios, instalaciones y acabados." accent />
-          <MetricCard label="Permisos pendientes" value={pendingPermits.length} description="Expedientes tecnicos por localizar o confirmar." />
+          <MetricCard label="Por confirmar" value={permitsToConfirm.length} description="Pendientes, reportados o en revision sin expediente oficial." />
           <MetricCard label="Riesgos tecnicos" value={technicalRisks.length} description="Riesgos que afectan diseno, operacion y avales." />
         </div>
       </SectionReveal>
