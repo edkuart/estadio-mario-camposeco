@@ -98,15 +98,22 @@ export default function InvestigacionPage() {
 
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
             {critical.map((article) => (
-              <article key={article.slug} className="rounded-lg border border-border bg-bg-card p-5">
+              <Link
+                key={article.slug}
+                href={`/investigacion/${article.slug}`}
+                className="group rounded-lg border border-border bg-bg-card p-5 transition-colors hover:border-accent/60 hover:bg-bg-subtle"
+              >
                 <div className="mb-3 flex items-center justify-between gap-3">
                   <span className={`font-mono text-xs ${CATEGORY_COLOR[article.category] ?? "text-text-muted"}`}>{article.category}</span>
                   <span className={`font-mono text-xs ${RELEVANCE_COLOR[article.relevance]}`}>● {article.relevance}</span>
                 </div>
                 <h3 className="font-display text-lg font-bold text-text-primary mb-2 leading-snug">{article.title}</h3>
                 <p className="text-sm text-text-secondary leading-relaxed mb-4">{article.summary}</p>
-                <p className="font-mono text-xs text-text-muted">{article.sourceLabel}</p>
-              </article>
+                <div className="flex items-end justify-between gap-4">
+                  <p className="font-mono text-xs text-text-muted">{article.sourceLabel}</p>
+                  <span className="shrink-0 font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">Abrir</span>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -115,7 +122,11 @@ export default function InvestigacionPage() {
       <SectionReveal delay={0.08}>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           {archive.map((article) => (
-            <article key={article.slug} className="group flex flex-col rounded-lg border border-border bg-bg-card p-6">
+            <Link
+              key={article.slug}
+              href={`/investigacion/${article.slug}`}
+              className="group flex flex-col rounded-lg border border-border bg-bg-card p-6 transition-colors hover:border-accent/60 hover:bg-bg-subtle"
+            >
               <div className="flex items-center justify-between gap-3 mb-3">
                 <span className={`font-mono text-xs ${CATEGORY_COLOR[article.category] ?? "text-text-muted"}`}>{article.category}</span>
                 <span className={`font-mono text-xs ${RELEVANCE_COLOR[article.relevance]}`}>● {article.relevance}</span>
@@ -125,8 +136,9 @@ export default function InvestigacionPage() {
               <div className="mt-4 flex flex-col gap-1 border-t border-border pt-4">
                 <span className="font-mono text-xs text-text-muted">Estado: {article.status}</span>
                 <span className="font-mono text-xs text-text-muted">Referencia: {article.sourceLabel}</span>
+                <span className="font-mono text-xs text-accent opacity-0 transition-opacity group-hover:opacity-100">Abrir investigacion</span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
       </SectionReveal>
